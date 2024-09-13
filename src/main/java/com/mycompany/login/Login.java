@@ -40,7 +40,19 @@ public class Login {
         this.password = password;
         return "User successfully registered!";
     }
-    
+     // Method to log in the user
+    public boolean loginUser(String username, String password) {
+        return this.username.equals(username) && this.password.equals(password);
+    }
+
+    // Method to return login status message
+    public String returnLoginStatus(boolean loginSuccess) {
+        if (loginSuccess) {
+            return "Welcome " + this.firstName + " " + this.lastName + ", it is great to see you again.";
+        } else {
+            return "Username or password incorrect, please try again.";
+        }
+    }
     public static void main(String[] args) {
 
     }
