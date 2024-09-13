@@ -54,7 +54,7 @@ public class Login {
         }
     }
     public static void main(String[] args) {
- Scanner sc= new Scanner(System.in);
+        Scanner sc= new Scanner(System.in);
         Login login = new Login();
         
           // User registration
@@ -66,6 +66,20 @@ public class Login {
         String username = sc.next();
         System.out.println("Create password:");
         String password = sc.next();
+        
+ // Register user and display the appropriate message
+        String registrationMessage = login.registerUser(username, password);
+        System.out.println(registrationMessage);
 
+        if (registrationMessage.equals("User successfully registered!")) {
+            // User login
+            System.out.println("Enter username to login:");
+            String loginUsername = sc.next();
+            System.out.println("Enter password:");
+            String loginPassword = sc.next();
+
+            boolean loginSuccess = login.loginUser(loginUsername, loginPassword);
+            System.out.println(login.returnLoginStatus(loginSuccess));
+        }
     }
 }
