@@ -56,6 +56,16 @@ public class Login {
     public static void main(String[] args) {
  Scanner sc= new Scanner(System.in);
         Login login = new Login();
+        
+          // User registration
+        System.out.println("Enter first name:");
+        login.firstName = sc.next();
+        System.out.println("Enter last name:");
+        login.lastName = sc.next();
+        System.out.println("Create username:");
+        String username = sc.next();
+        System.out.println("Create password:");
+        String password = sc.next();
 
     }
 }
